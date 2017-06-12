@@ -1,5 +1,5 @@
-TARGET 	= test-libprotobuf
-LIBS	= libprotobuf stdcxx pthread
-SRC_CC	= main.cc
+TARGET = test-libprotobuf
+LIBS   = libprotobuf stdcxx pthread
+SRC_CC = main.cc
 
-vpath main.cc $(PRG_DIR)/..
+vpath %.cc $(PRG_DIR)
