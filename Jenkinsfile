@@ -7,7 +7,7 @@ pipeline {
         //preparing for github log
         sh "mkdir -p log"
         sh "touch log/prepare.log"
-        sh 'git pull https://github.com/argos-research/genode > log/prepare.log 2>&1'
+        sh 'git clone https://github.com/argos-research/genode > log/prepare.log 2>&1'
         sh 'create builddir >> log/prepare.log 2>&1'
       }
     }
