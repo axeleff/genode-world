@@ -16,7 +16,6 @@ pipeline {
         sh 'echo build'
       }
     }
-  }
   
   } // stages ends here
   post {
