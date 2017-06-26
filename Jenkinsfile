@@ -16,11 +16,6 @@ pipeline {
         sh 'echo build'
       }
     }
-  stage('Notifications'){
-   steps {
-        sh "mkdir -p /home/bliening/ownCloud/702nados/log/${env.JOB_NAME}/${env.BUILD_NUMBER}"
-        sh "cp -R log/* /home/bliening/ownCloud/702nados/log/${env.JOB_NAME}/${env.BUILD_NUMBER}/"
-   }
   }
   
   } // stages ends here
@@ -32,6 +27,8 @@ pipeline {
     mattermostSend color: "#3cc435", message: "Build Successful: [${env.JOB_NAME} ${env.BUILD_NUMBER}](${env.BUILD_URL})"
 }
     always {
+        sh "mkdir -p /home/bliening/ownCloud/702nados/log/${env.JOB_NAME}/${env.BUILD_NUMBER}"
+        sh "cp -R log/* /home/bliening/ownCloud/702nados/log/${env.JOB_NAME}/${env.BUILD_NUMBER}/"
       deleteDir()
     }
   } //post ends here
