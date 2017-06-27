@@ -1,4 +1,5 @@
 TARGET = mpct
 SRC_CC = main.cpp
-INC_DIR += $(REP_DIR)/../libports/include/lwip
 LIBS   = base libmosquitto stdcxx lwip pthread
+
+INC_DIR += $(call select_from_repositories,include/lwip)

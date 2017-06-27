@@ -16,7 +16,6 @@
 /* lwip includes */
 extern "C" {
 #include <lwip/sockets.h>
-#include <lwip/api.h>
 }
 #include <lwip/genode.h>
 #include <nic/packet_allocator.h>
