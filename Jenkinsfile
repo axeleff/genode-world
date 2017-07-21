@@ -35,6 +35,7 @@ pipeline {
         sh './genode/tool/ports/prepare_port lwip >> log/prepare.log.txt 2>&1'
         sh './genode/tool/ports/prepare_port openssl >> log/prepare.log.txt 2>&1'
         sh './genode/tool/ports/prepare_port stdcxx >> log/prepare.log.txt 2>&1'
+        sh './genode/tool/ports/prepare_port zlib >> log/prepare.log.txt 2>&1'
         // libraries
         sh './genode/tool/ports/prepare_port libprotobuf >> log/prepare.log.txt 2>&1' // libprotobuf
         sh './genode/tool/ports/prepare_port libmosquitto >> log/prepare.log.txt 2>&1' // libmosquitto
