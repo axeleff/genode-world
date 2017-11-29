@@ -1,0 +1,26 @@
+VERSION   := 3.2.25
+DOWNLOADS := libnl.archive
+LICENSE   := other
+
+URL(libnl) := http://www.infradead.org/~tgr/libnl/files/libnl-$(VERSION).tar.gz
+SHA(libnl) := b7a4981f7edf7398256d35fd3c0b87bc84ae27d1
+DIR(libnl) := src/lib/libnl
+
+
+default: generate_libnl_files
+generate_libnl_files: $(DOWNLOADS)
+        @$(MSG_PREFIX)"generate libnl files "
+        $(VERBOSE)$(FLEX) --header-file=${DIR(libnl)}/lib/route/pktloc_grammar.h \
+                          -o ${DIR(libnl)}/lib/route/pktloc_grammar.c            \
+                           ${DIR(libnl)}/lib/route/pktloc_grammar.l
+        $(VERBOSE)$(YACC) -d -o ${DIR(libnl)}/lib/route/pktloc_syntax.c \
+                          ${DIR(libnl)}/lib/route/pktloc_syntax.y
+        $(VERBOSE)$(FLEX) --header-file=${DIR(libnl)}/lib/route/cls/ematch_grammar.h \
+                          -o ${DIR(libnl)}/lib/route/cls/ematch_grammar.c            \
+                          ${DIR(libnl)}/lib/route/cls/ematch_grammar.l
+        $(VERBOSE)$(YACC) -d -o ${DIR(libnl)}/lib/route/cls/ematch_syntax.c \
+                          ${DIR(libnl)}/lib/route/cls/ematch_syntax.y
+
+
+PATCHES := src/lib/libnl/libnl.patch
+

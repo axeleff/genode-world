@@ -1,0 +1,15 @@
++++ src/lib/libpcap/portability.h
+@@ -56,11 +56,11 @@
+ 	strncpy_s((x), (z), (y), _TRUNCATE)
+ 
+  #else
+-  #define strlcpy(x, y, z) \
++/*  #define strlcpy(x, y, z) \
+ 	(strncpy((x), (y), (z)), \
+ 	 ((z) <= 0 ? 0 : ((x)[(z) - 1] = '\0')), \
+ 	 (void) strlen((y)))
+- #endif
++ */#endif
+ #endif
+ 
+ /*

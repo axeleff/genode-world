@@ -1,0 +1,13 @@
+VERSION   := 1.8.1
+DOWNLOADS := pcap.archive
+LICENSE   := other
+
+URL(pcap) := https://www.ca.tcpdump.org/release/libpcap-$(VERSION).tar.gz
+SHA(pcap) := 32d7526dde8f8a2f75baf40c01670602aeef7e39
+DIR(pcap) := src/lib/libpcap
+
+PATCHES := src/lib/libpcap/portability.patch \
+	src/lib/libpcap/pcap-linux.patch \
+	src/lib/libpcap/pcap-netfilter-linux.patch \
+        src/lib/libpcap/pcap_version.patch
+
