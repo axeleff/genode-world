@@ -1,6 +1,5 @@
 SHARED_LIB = yes
 
-
 LIB_DIR     = $(REP_DIR)/src/lib/libnl
 LIB_INC_DIR = $(LIB_DIR)/include
 
@@ -34,7 +33,7 @@ CC_OPT += -D_LINUX_SOCKET_H
 #         $(wildcard lib/route/*.c)
 
 # libnl-netfilter
-#SRC_C += $(wildcard lib/netfilter/*.c)
+SRC_C += $(wildcard lib/netfilter/*.c)
 
 # libnl-diag
 #SRC_C += $(wildcard lib/idiag/*.c)

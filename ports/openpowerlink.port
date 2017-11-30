@@ -1,9 +1,9 @@
-VERSION   := 2.6.1
+VERSION   := 2.6.2
 DOWNLOADS := openpowerlink.archive
 LICENSE   := other
 
 URL(openpowerlink) := https://sourceforge.net/projects/openpowerlink/files/openPOWERLINK/V$(VERSION)/openPOWERLINK_V$(VERSION).tar.gz
-SHA(openpowerlink) := dfb97845937e8d1de3e554c17b951a115352faa6
+SHA(openpowerlink) := bf6a8b202c1192b531ce6d6c4c6254e5689c65fe
 DIR(openpowerlink) := src/lib/openpowerlink
 
 #PATCHES := src/lib/libpcap/net_mosq.patch

@@ -1,5 +1,5 @@
 TARGET   = test-libpcap
-LIBS     = libpcap stdcxx
+LIBS     = libpcap stdcxx net
 PCAP_SRC = $(call select_from_ports,libpcap)/src/lib/libpcap/
 EX_DIR   = $(PCAP_SRC)/tests
 INC_DIR  = $(EX_DIR)
