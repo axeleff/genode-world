@@ -59,6 +59,13 @@ SRC_LIBPCAP := grammer.h \
 	bpf_filter.c
 
 YACC = bison
+LEX = flex
+
+GENHDR = \
+        scanner.h grammar.h pcap_version.h
+
+TAGFILES = \
+        $(SRC) $(HDR)
 
 SRC_CC = $(addprefix $(LIBPCAP_DIR)/, $(SRC_LIBPCAP)) $(SRC_LIBPCAP) $(LIBPCAP_DIR)/pcap/ $(HDR)
 
