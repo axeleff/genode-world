@@ -1,9 +1,7 @@
-VERSION   := 2.6.2
-DOWNLOADS := openpowerlink.archive
 LICENSE   := other
+VERSION   := git
+DOWNLOADS := openpowerlink.git
 
-URL(openpowerlink) := https://sourceforge.net/projects/openpowerlink/files/openPOWERLINK/V$(VERSION)/openPOWERLINK_V$(VERSION).tar.gz
-SHA(openpowerlink) := bf6a8b202c1192b531ce6d6c4c6254e5689c65fe
-DIR(openpowerlink) := src/lib/openpowerlink
-
-#PATCHES := src/lib/libpcap/net_mosq.patch
+URL(openpowerlink) := https://github.com/axeleff/genode-openpowerlink.git
+DIR(openpowerlink) := openpowerlink
+REV(openpowerlink) := master
