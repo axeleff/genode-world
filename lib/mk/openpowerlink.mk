@@ -1,6 +1,6 @@
 OPL_DIR := $(call select_from_ports,openpowerlink)
 
-INC_DIR += $(OPL_DIR)/openpowerlink $(OPL_DIR)/openpowerlink/include $(OPL_DIR)/openpowerlink/proj $(OPL_DIR)/openpowerlink/contrib/ $(OPL_DIR)/openpowerlink/common/ $(OPL_DIR)/openpowerlink/app/ $(OPL_DIR)/openpowerlink/arch/
+INC_DIR += $(OPL_DIR)/openpowerlink $(OPL_DIR)/openpowerlink/include $(OPL_DIR)/openpowerlink/proj $(OPL_DIR)/openpowerlink/contrib/ $(OPL_DIR)/openpowerlink/common/ $(OPL_DIR)/openpowerlink/app/ $(OPL_DIR)/openpowerlink/arch/ $(OPL_DIR)/openpowerlink/app/common $(OPL_DIR)/openpowerlink/app/common/obdcreate
 
 LIBS += libc libc-net libc_lwip base lwip pthread stdcxx
 
@@ -78,20 +78,29 @@ SRC_CN = /user/api/generic.c \
 /kernel/pdo/pdokcalmem-local.c \
 /kernel/timesync/timesynckcal-local.c \
 /kernel/veth/veth-linuxuser.c \
-/kernel/timer/hrestimer-posix.c \
+/kernel/timer/hrestimer-genode.c \
 /kernel/edrv/edrvcyclic.c \
 /kernel/edrv/foc.c \
 /user/obd/obdconf-fileio.c \
 /user/obd/obdconfcrc-generic.c \
 /common/circbuf/circbuffer.c \
-/common/circbuf/circbuf-posixshm.c \
+/common/circbuf/circbuf-noos.c \
 /common/memmap/memmap-null.c \
 /common/ami/amix86.c \
 /kernel/edrv/genode_wrapper.cpp \
 /common/debugstr.c \
 /arch/L4-FOC/target-foc.c \
 /arch/L4-FOC/target-mutex.c \
-/contrib/trace/trace-printf.c
+/contrib/trace/trace-printf.c \
+/app/main.c \
+/app/app.c \
+/app/event.c \
+/app/common/eventlog/eventlogstring.c \
+/app/common/eventlog/eventlog.c \
+/contrib/console/printlog.c \
+/contrib/console/console-linux.c \
+/app/common/system/system-linux.c \
+/app/common/obdcreate/obdcreate.c
 
 SRC_CC = $(addprefix $(OPL_DIR)/openpowerlink, $(SRC_CN)) 
 
