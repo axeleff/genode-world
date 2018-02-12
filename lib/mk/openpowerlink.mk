@@ -80,7 +80,7 @@ SRC_CN = /user/api/generic.c \
 /kernel/veth/veth-linuxuser.c \
 /kernel/timer/hrestimer-genode.c \
 /kernel/edrv/edrvcyclic.c \
-/kernel/edrv/foc.c \
+/kernel/edrv/edrv-genode.c \
 /user/obd/obdconf-fileio.c \
 /user/obd/obdconfcrc-generic.c \
 /common/circbuf/circbuffer.c \
